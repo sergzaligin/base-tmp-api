@@ -2,7 +2,7 @@ const faker = require('faker');
 
 const Article = require('../models/Article');
 
-module.exports = class FakerCreateController {
+class FakerCreateController {
 	
 	create(req, res) {
 
@@ -23,10 +23,6 @@ module.exports = class FakerCreateController {
 			Article.create(ArticleBody);
 		}
 
-		
-
-		
-
 		res.status(404).json({
 			msg: 'Статьи успешно созданы.',
 			status: 200
@@ -34,3 +30,5 @@ module.exports = class FakerCreateController {
 	};
 
 };
+
+module.exports = new FakerCreateController;
